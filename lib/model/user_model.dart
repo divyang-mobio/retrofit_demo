@@ -5,17 +5,19 @@ part 'user_model.g.dart';
 @JsonSerializable()
 class UserModel {
   int id;
-  String name, email, username, phone, website;
+  String name, email, username, website;
+  @JsonKey(name: 'phone')
+  String mobile;
   @JsonKey(name: 'address')
   AddressModel addressModel;
   @JsonKey(name: 'company')
   CompanyModel companyModel;
 
-  UserModel(  
+  UserModel(
       {required this.id,
       required this.name,
       required this.email,
-      required this.phone,
+      required this.mobile,
       required this.username,
       required this.website,
       required this.addressModel,
@@ -48,9 +50,12 @@ class AddressModel {
 
 @JsonSerializable()
 class GeoModel {
-  String lat, lng;
+  @JsonKey(name: 'lat')
+  String latitude;
+  @JsonKey(name: 'lng')
+  String longitude;
 
-  GeoModel({required this.lat, required this.lng});
+  GeoModel({required this.latitude, required this.longitude});
 
   factory GeoModel.fromJson(Map<String, dynamic> json) =>
       _$GeoModelFromJson(json);
@@ -68,7 +73,9 @@ class CompanyModel {
   String businessType;
 
   CompanyModel(
-      {required this.companyName, required this.businessMoto, required this.businessType});
+      {required this.companyName,
+      required this.businessMoto,
+      required this.businessType});
 
   factory CompanyModel.fromJson(Map<String, dynamic> json) =>
       _$CompanyModelFromJson(json);

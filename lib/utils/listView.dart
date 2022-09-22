@@ -26,10 +26,10 @@ Card commentCardData(context, UserModel data) => Card(
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('name:- ${data.name}'),
+            Text('Name:- ${data.name}'),
             Text('UserName:- ${data.username}'),
-            Text('email:- ${data.email}'),
-            Text('Phone No:- ${data.phone}'),
+            Text('Email:- ${data.email}'),
+            Text('Mobile No:- ${data.mobile}'),
             Text('Website:- ${data.website}'),
             Text('''Address:- ${data.addressModel.suite},
                   ${data.addressModel.street},

@@ -10,7 +10,7 @@ UserModel _$UserModelFromJson(Map<String, dynamic> json) => UserModel(
       id: json['id'] as int,
       name: json['name'] as String,
       email: json['email'] as String,
-      phone: json['phone'] as String,
+      mobile: json['phone'] as String,
       username: json['username'] as String,
       website: json['website'] as String,
       addressModel:
@@ -24,8 +24,8 @@ Map<String, dynamic> _$UserModelToJson(UserModel instance) => <String, dynamic>{
       'name': instance.name,
       'email': instance.email,
       'username': instance.username,
-      'phone': instance.phone,
       'website': instance.website,
+      'phone': instance.mobile,
       'address': instance.addressModel,
       'company': instance.companyModel,
     };
@@ -48,13 +48,13 @@ Map<String, dynamic> _$AddressModelToJson(AddressModel instance) =>
     };
 
 GeoModel _$GeoModelFromJson(Map<String, dynamic> json) => GeoModel(
-      lat: json['lat'] as String,
-      lng: json['lng'] as String,
+      latitude: json['lat'] as String,
+      longitude: json['lng'] as String,
     );
 
 Map<String, dynamic> _$GeoModelToJson(GeoModel instance) => <String, dynamic>{
-      'lat': instance.lat,
-      'lng': instance.lng,
+      'lat': instance.latitude,
+      'lng': instance.longitude,
     };
 
 CompanyModel _$CompanyModelFromJson(Map<String, dynamic> json) => CompanyModel(
